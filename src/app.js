@@ -27,6 +27,51 @@ var templateTwo = (
         {getLocation(user.location)}
     </div>
 );
+var count = 0;
+var myId = 'button-id';
+const addOne = () =>{
+    count++;
+    renderCounterApp();
+    console.log('add one method called');
+}
+const minusOne = () =>{
+    count--;
+    renderCounterApp();
 
+    console.log('minus one method called');
+}
+const reset = () =>{
+    count = 0;
+    renderCounterApp();
+
+    console.log('Reset ');
+}
+var templateThree = (
+    <div>
+        <p>Count is {count}</p>
+        <button onClick ={addOne} className='button'>+1</button>
+        <button onClick ={minusOne} className='button'>-1</button>
+        <button onClick ={reset} className='button'>reset</button>
+
+
+    </div>
+
+);
 var appRoot = document.getElementById('app');
-ReactDOM.render(template, appRoot);
+
+const renderCounterApp = () => {
+    var templateThree = (
+        <div>
+            <p>Count is {count}</p>
+            <button onClick ={addOne} className='button'>+1</button>
+            <button onClick ={minusOne} className='button'>-1</button>
+            <button onClick ={reset} className='button'>reset</button>
+    
+    
+        </div>
+    
+    );
+    ReactDOM.render(templateThree, appRoot);
+
+}
+renderCounterApp();
